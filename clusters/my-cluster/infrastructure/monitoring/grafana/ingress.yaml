@@ -6,7 +6,8 @@ metadata:
 spec:
   ingressClassName: grafana-ingress
   rules:
-  - http:
+  - host: grafana.cleoverse.home
+    http:
       paths:
       - path: /
         pathType: Prefix
