@@ -23,7 +23,3 @@ spec:
       retries: 3
   values:
     fullnameOverride: reloader
-    reloader:
-      podMonitor:
-        enabled: false
-        namespace: *namespace
