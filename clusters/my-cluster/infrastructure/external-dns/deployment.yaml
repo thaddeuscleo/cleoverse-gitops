@@ -4,6 +4,7 @@ metadata:
   name: external-dns
   namespace: default
 spec:
+  replicas: 1
   strategy:
     type: Recreate
   selector:
