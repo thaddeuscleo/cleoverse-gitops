@@ -13,9 +13,9 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: grafana
+      chart: grafana/grafana
       sourceRef:
-        kind: https://grafana.github.io/helm-charts
+        kind: HelmRepository
         name: grafana
         namespace: monitoring
       interval: 1m
