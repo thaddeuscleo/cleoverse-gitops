@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: Nginx
+  namespace: nginx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        type: testing
+    spec:
+      containers:
+      - name: Nginx
+        image: nginx:alpine3.18-slim 
