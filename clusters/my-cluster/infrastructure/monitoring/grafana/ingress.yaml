@@ -4,7 +4,7 @@ metadata:
   name: grafana-ingress
   namespace: monitoring
 spec:
-  ingressClassName: grafana-ingress
+  ingressClassName: traefik
   rules:
   - host: grafana.cleoverse.home
     http:
