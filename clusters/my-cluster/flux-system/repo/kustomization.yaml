@@ -5,3 +5,4 @@ resources:
 - prometheus-community.yaml
 - sealed-secrets.yaml
 - stakater.yaml
+- longhorn.yaml
