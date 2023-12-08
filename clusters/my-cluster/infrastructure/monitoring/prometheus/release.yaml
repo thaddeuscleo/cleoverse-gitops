@@ -16,3 +16,9 @@
 #       interval: 1m
 #   values:
 #     replicaCount: 1
+#     server:
+#       persistentVolume:
+#         size: 1Gi
+#         storageClass: "longhorn"
+#       retention: "5d"
+#       retentionSize: "500MB"
