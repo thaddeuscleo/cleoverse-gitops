@@ -13,40 +13,19 @@ spec:
         kind: HelmRepository
         name: bjw-charts
         namespace: flux-system
-      interval: 5m
+      interval: 5m  
+  maxHistory: 3
   install:
-    timeout: 10m
-    replace: true
-    crds: CreateReplace
     createNamespace: true
     remediation:
       retries: 3
   upgrade:
+    cleanupOnFail: true
     remediation:
-      remediateLastFailure: true
       retries: 3
-      strategy: rollback
-    cleanupOnFail: true
-    crds: CreateReplace
-  test:
-    enable: true
-  rollback:
-    recreate: true
-    force: true
-    cleanupOnFail: true
   uninstall:
     keepHistory: false
-  maxHistory: 3
   values:
-    persistence:
-      config:
-        enabled: true
-        type: persistentVolumeClaim
-        accessMode: ReadWriteOnce
-        size: 1Gi
-        storageClass: "longhorn"
-        globalMounts:
-          - path: /app/config
     controllers:
       main:
         type: statefulset
@@ -65,8 +44,17 @@ spec:
                 memory: 443M
               limits:
                 memory: 536M
-     service:
+    service:
       main:
         ports:
           http:
             port: 8080 
+    persistence:
+      config:
+        enabled: true
+        type: persistentVolumeClaim
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        storageClass: "longhorn"
+        globalMounts:
+          - path: /app/config
