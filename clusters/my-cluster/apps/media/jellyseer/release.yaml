@@ -57,11 +57,9 @@ spec:
           - host: jellyseer.cleoverse.home
             paths:
             - path: /
-              pathType: Prefix
               service:
                 name: main
-                port:
-                  name: http
+                port: http
     persistence:
       config:
         enabled: true
