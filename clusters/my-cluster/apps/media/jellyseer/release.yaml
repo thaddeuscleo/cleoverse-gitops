@@ -49,6 +49,19 @@ spec:
         ports:
           http:
             port: 8080 
+    ingress:
+      main:
+        enabled: true
+        className: "traefik"
+        hosts:
+          - host: jellyseer.cleoverse.home
+            paths:
+            - path: /
+              pathType: Prefix
+              service:
+                name: main
+                port:
+                  number: http
     persistence:
       config:
         enabled: true
