@@ -90,8 +90,15 @@ spec:
                   name: main
                   port: http
     persistence:
-      enabled: true
+      config:
+        enabled: true
         type: persistentVolumeClaim
         accessMode: ReadWriteMany
-        size: 1Gi
+        size: 500Mi
+        storageClass: "longhorn"
+      media:
+        enabled: true
+        type: persistentVolumeClaim
+        accessMode: ReadWriteMany
+        size: 500Mi
         storageClass: "longhorn"
