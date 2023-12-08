@@ -34,9 +34,5 @@ spec:
       persistence:
         size: 1Gi
         storageClass: "longhorn"
-    singleBinary:
-      persistence:
-        size: 1Gi
-        storageClass: "longhorn"
     tableManager:
       retention_period: 52h
