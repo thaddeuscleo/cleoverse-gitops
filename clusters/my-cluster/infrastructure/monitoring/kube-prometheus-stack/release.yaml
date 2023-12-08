@@ -7,7 +7,7 @@ spec:
   interval: 1h
   chart:
     spec:
-      chart: grafana
+      chart: kube-prometheus-stack
       version: '55.0.0'
       sourceRef:
         kind: HelmRepository
