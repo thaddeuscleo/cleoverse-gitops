@@ -8,10 +8,10 @@ spec:
   chart:
     spec:
       chart: sonarr
-      version: '1.0.0'
+      version: '0.2.2'
       sourceRef:
         kind: HelmRepository
-        name: qjoly-charts
+        name: alekc
         namespace: flux-system
   maxHistory: 2
   install:
@@ -22,11 +22,6 @@ spec:
     remediation:
       retries: 3
   values:
-    common:
-      persistence:
-        volumes:
-          - name: "config"
-            storageClassName: "longhorn"
-            size: 1Gi
-            containerMount: "/config/"
+    persistence:
+      storageClass: "longhorn"
         
