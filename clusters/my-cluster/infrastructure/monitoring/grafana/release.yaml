@@ -1,18 +1,32 @@
-# apiVersion: helm.toolkit.fluxcd.io/v2beta1
-# kind: HelmRelease
-# metadata:
-#   name: grafana
-#   namespace: monitoring
-# spec:
-#   interval: 30m
-#   chart:
-#     spec:
-#       chart: grafana
-#       version: '7.0.3'
-#       sourceRef:
-#         kind: HelmRepository
-#         name: grafana
-#         namespace: flux-system
-#       interval: 1m
-#   values:
-#     replicaCount: 1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: grafana
+      version: '7.0.3'
+      sourceRef:
+        kind: HelmRepository
+        name: grafana
+        namespace: flux-system
+      interval: 1m
+  values:
+    replicaCount: 1
+    # dashboardProviders:
+    #   dashboardproviders.yaml:
+    #     apiVersion: 1
+    #     providers:
+    #     - name: 'k3s'
+    #       orgId: 1
+    #       folder: 'k3s'
+    #       type: file
+    #       disableDeletion: false
+    #       editable: true
+    # dashboards:
+    #   k3s:
+    #     json: |
+    #       https://grafana.com/api/dashboards/15282/revisions/1/download
