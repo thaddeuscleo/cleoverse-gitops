@@ -6,5 +6,4 @@ resources:
 - sealed-secrets.yaml
 - stakater.yaml
 - longhorn.yaml
-- qjoly-charts.yaml
-- alekc.yaml
+- bjw-charts.yaml
