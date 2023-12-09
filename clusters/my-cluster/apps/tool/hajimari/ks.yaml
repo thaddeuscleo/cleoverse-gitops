@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./clusters/my-cluster/apps/dashboard/hajimari/app
+  path: ./clusters/my-cluster/apps/tool/hajimari/app
   prune: true
   sourceRef:
     kind: GitRepository
