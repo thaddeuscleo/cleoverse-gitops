@@ -22,7 +22,7 @@ spec:
   upgrade:
     cleanupOnFail: true
     remediation:
-      retries: 3
+      retries: -1
   uninstall:
     keepHistory: false
   values:
@@ -54,8 +54,8 @@ spec:
         enabled: true
         className: "traefik"
         annotations:
-          hajimari.io/enable: true
-          hajimari.io/appName: "Jellyseer"
+          # hajimari.io/enable: true
+          # hajimari.io/appName: "Jellyseer"
           # hajimari.io/icon: "simple-icons:wpexplorer"
         #   hajimari.io/group: "Media"
         hosts:
