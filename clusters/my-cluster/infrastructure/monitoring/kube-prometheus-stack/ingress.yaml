@@ -5,6 +5,9 @@ metadata:
   namespace: monitoring
   annotations:
     hajimari.io/icon: simple-icons:grafana
+    hajimari.io/enable: true
+    hajimari.io/appName: "Grafana"
+    hajimari.io/group: "Monitoring"
 spec:
   ingressClassName: traefik
   rules:
