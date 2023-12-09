@@ -51,7 +51,7 @@ spec:
             port: 8080 
     ingress:
       main:
-        enabled: false
+        enabled: true
         className: "traefik"
         annotations:
           hajimari.io/icon: simple-icons:wpexplorer
