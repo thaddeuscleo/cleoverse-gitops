@@ -34,3 +34,10 @@ spec:
                 pathType: Prefix
     hajimari:
       name: "Thaddeus Cleo"
+      darkTheme: espresso
+      showGreeting: false
+      namespaceSelector:
+        matchNames:
+          - tool
+          - monitoring
+          - media
