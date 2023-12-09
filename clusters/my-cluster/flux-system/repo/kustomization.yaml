@@ -7,3 +7,4 @@ resources:
 - stakater.yaml
 - longhorn.yaml
 - bjw-charts.yaml
+- hajimari.yaml
