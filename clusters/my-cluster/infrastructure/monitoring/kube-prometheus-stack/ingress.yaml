@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: grafana-ingress
   namespace: monitoring
+  annotations:
+    hajimari.io/icon: simple-icons:grafana
 spec:
   ingressClassName: traefik
   rules:
