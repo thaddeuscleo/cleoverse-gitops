@@ -53,11 +53,11 @@ spec:
       main:
         enabled: true
         className: "traefik"
-        annotations:
-          hajimari.io/icon: "simple-icons:wpexplorer"
-          hajimari.io/enable: true
-          hajimari.io/appName: "Jellyseer"
-          hajimari.io/group: "Media"
+        # annotations:
+        #   hajimari.io/icon: "simple-icons:wpexplorer"
+        #   hajimari.io/enable: true
+        #   hajimari.io/appName: "Jellyseer"
+        #   hajimari.io/group: "Media"
         hosts:
           - host: jellyseer.cleoverse.home
             paths:
