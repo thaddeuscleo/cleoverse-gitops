@@ -53,7 +53,7 @@ spec:
       main:
         enabled: true
         className: "traefik"
-        annotation:
+        annotations:
           hajimari.io/icon: simple-icons:wpexplorer
           hajimari.io/enable: true
           hajimari.io/appName: "Jellyseer"
