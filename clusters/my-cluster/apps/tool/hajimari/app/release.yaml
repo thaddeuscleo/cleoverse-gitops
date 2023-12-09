@@ -33,6 +33,7 @@ spec:
               - path: /
                 pathType: Prefix
     hajimari:
+      title: Apps
       name: "Thaddeus Cleo"
       darkTheme: espresso
       showGreeting: false
