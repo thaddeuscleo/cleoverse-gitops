@@ -54,14 +54,14 @@ spec:
         enabled: true
         className: "traefik"
         annotations:
-          hajimari.io/icon: simple-icons:wpexplorer
+          hajimari.io/icon: "simple-icons:wpexplorer"
           hajimari.io/enable: true
           hajimari.io/appName: "Jellyseer"
           hajimari.io/group: "Media"
         hosts:
           - host: jellyseer.cleoverse.home
             paths:
-            - path: /
+            - path: "/"
               service:
                 name: main
                 port: http
@@ -73,4 +73,4 @@ spec:
         size: 1Gi
         storageClass: "longhorn"
         globalMounts:
-          - path: /app/config
+          - path: "/app/config"
