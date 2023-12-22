@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: jellyfin.cleoverse.home
+  - host: jellyfin.cleoverse.media
     http:
       paths:
       - path: /
