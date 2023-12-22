@@ -5,7 +5,7 @@ metadata:
   namespace: media
 subsets:
 - addresses:
-  - ip: 192.168.0.150
+  - ip: 192.168.0.152
   ports:
   - name: jellyfin-app
     port: 80
