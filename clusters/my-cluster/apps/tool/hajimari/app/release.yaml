@@ -37,6 +37,8 @@ spec:
       name: "Thaddeus Cleo"
       darkTheme: espresso
       showGreeting: false
+      showAppGroups: true
+      showAppUrls: false
       namespaceSelector:
         matchNames:
           - tool
