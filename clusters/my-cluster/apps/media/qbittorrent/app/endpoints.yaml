@@ -5,7 +5,7 @@ metadata:
   namespace: media
 subsets:
 - addresses:
-  - ip: ${SECRET_MEDIA_STACK_IP_ADDRESS}
+  - ip: 192.168.0.152
   ports:
   - name: qbittorrent-app
     port: 80
