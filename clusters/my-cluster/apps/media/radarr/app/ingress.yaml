@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: radarr.cleoverse.home
+  - host: radarr.${SECRET_LOCAL_DOMAIN}
     http:
       paths:
       - path: /
