@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qbittorrent-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: simple-icons:vuedotjs
+    hajimari.io/enable: true
+    hajimari.io/appName: "qbittorrent"
+    hajimari.io/group: "Media"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: torrent.cleoverse.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: qbittorrent-svc
+            port:
+              number: 80
