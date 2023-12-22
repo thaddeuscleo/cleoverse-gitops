@@ -6,12 +6,12 @@ metadata:
   annotations:
     hajimari.io/icon: game-icons:chest-armor
     hajimari.io/enable: true
-    hajimari.io/appName: "Jackett"
+    hajimari.io/appName: "Jackett ${SECRET_LOCAL_DOMAIN}"
     hajimari.io/group: "Media"
 spec:
   ingressClassName: traefik
   rules:
-  - host: "jackett.${SECRET_LOCAL_DOMAIN}"
+  - host: "jackett.cleoverse.home"
     http:
       paths:
       - path: /
