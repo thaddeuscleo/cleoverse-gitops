@@ -1,4 +1,5 @@
-- repo: https://github.com/yuvipanda/pre-commit-hook-ensure-sops
-    rev: v1.0
-    hooks:
-      - id: sops-encryption
+repos:
+- repo: https://github.com/onedr0p/sops-pre-commit
+  rev: v2.1.0
+  hooks:
+    - id: forbid-secrets
