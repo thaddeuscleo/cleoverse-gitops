@@ -6,7 +6,7 @@ metadata:
   annotations:
     hajimari.io/icon: game-icons:chest-armor
     hajimari.io/enable: true
-    hajimari.io/appName: "Jackett ${SECRET_LOCAL_DOMAIN}"
+    hajimari.io/appName: "Jackett ${AUTHOR}"
     hajimari.io/group: "Media"
 spec:
   ingressClassName: traefik
