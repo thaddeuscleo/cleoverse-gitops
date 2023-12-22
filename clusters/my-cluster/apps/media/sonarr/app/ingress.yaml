@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sonarr-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: simple-icons:darkreader
+    hajimari.io/enable: true
+    hajimari.io/appName: "Sonarr"
+    hajimari.io/group: "Media"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: sonarr.cleoverse.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sonarr-svc
+            port:
+              number: 80
