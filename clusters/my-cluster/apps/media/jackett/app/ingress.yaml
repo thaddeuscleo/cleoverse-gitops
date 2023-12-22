@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jackett-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: simple-icons:darkreader
+    hajimari.io/enable: true
+    hajimari.io/appName: "jackett"
+    hajimari.io/group: "Media"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: jackett.cleoverse.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jackett-svc
+            port:
+              number: 80
