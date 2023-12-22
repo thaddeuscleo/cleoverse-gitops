@@ -59,7 +59,7 @@ spec:
           # hajimari.io/icon: "simple-icons:wpexplorer"
         #   hajimari.io/group: "Media"
         hosts:
-          - host: jellyseer.${SECRET_LOCAL_DOMAIN}
+          - host: jellyseer.cleoverse.home
             paths:
             - path: "/"
               service:

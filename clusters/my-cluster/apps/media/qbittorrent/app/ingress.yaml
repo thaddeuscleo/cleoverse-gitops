@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: torrent.${SECRET_LOCAL_DOMAIN}
+  - host: torrent.cleoverse.home
     http:
       paths:
       - path: /

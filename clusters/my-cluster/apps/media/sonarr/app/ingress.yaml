@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: sonarr.${SECRET_LOCAL_DOMAIN}
+  - host: sonarr.cleoverse.home
     http:
       paths:
       - path: /
