@@ -6,12 +6,12 @@ metadata:
   annotations:
     hajimari.io/icon: game-icons:visored-helm
     hajimari.io/enable: true
-    hajimari.io/appName: "Lidarr ${SECRET_LOCAL_DOMAIN}"
+    hajimari.io/appName: "Lidarr"
     hajimari.io/group: "Media"
 spec:
   ingressClassName: traefik
   rules:
-  - host: lidarr.cleoverse.home
+  - host: lidarr.${SECRET_LOCAL_DOMAIN}
     http:
       paths:
       - path: /
