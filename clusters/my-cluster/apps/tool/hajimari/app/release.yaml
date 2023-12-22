@@ -44,3 +44,40 @@ spec:
           - tool
           - monitoring
           - media
+      globalBookmarks:
+        - group: Mail
+          bookmarks:
+            - name: "ICloud Mail"
+              icon: simple-icons:icloud
+              url: https://www.icloud.com/mail
+            - name: "Gmail"
+              icon: simple-icons:gmail
+              url: https://mail.google.com
+        - group: Repository
+          bookmarks:
+            - name: "Github"
+              icon: simple-icons:github
+              url: https://github.com
+            - name: "Gitlab"
+              icon: simple-icons:gitlab
+              url: https://gitlab.com
+            - name: "Docker Hub"
+              icon: simple-icons:docker
+              url: https://hub.docker.com/search
+            - name: "Artifact Hub"
+              icon: simple-icons:artifacthub
+              url: https://artifacthub.io
+            - name: "Hugging Face"
+              icon: simple-icons:openai
+              url: https://huggingface.co/models
+        - group: Social
+          bookmarks:
+            - name: "Youtube"
+              icon: simple-icons:youtube
+              url: https://youtube.com
+            - name: "Twitter"
+              icon: simple-icons:x
+              url: https://twitter.com
+            - name: "LinkedIn"
+              icon: simple-icons:linkedin
+              url: https://www.linkedin.com
