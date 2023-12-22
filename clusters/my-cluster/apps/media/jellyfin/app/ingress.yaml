@@ -4,7 +4,7 @@ metadata:
   name: jellyfin-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: simple-icons:jellyfin
+    hajimari.io/icon: arcticons:jellyfin
     hajimari.io/enable: true
     hajimari.io/appName: "Jellyfin"
     hajimari.io/group: "Media"

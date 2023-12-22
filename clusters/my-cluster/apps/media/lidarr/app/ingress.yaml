@@ -4,7 +4,7 @@ metadata:
   name: lidarr-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: simple-icons:darkreader
+    hajimari.io/icon: game-icons:visored-helm
     hajimari.io/enable: true
     hajimari.io/appName: "Lidarr"
     hajimari.io/group: "Media"

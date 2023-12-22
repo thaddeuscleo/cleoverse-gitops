@@ -33,11 +33,11 @@ spec:
               - path: /
                 pathType: Prefix
     hajimari:
-      title: Apps
+      title: "Cleo Hajimari"
       name: "Thaddeus Cleo"
       darkTheme: espresso
-      showGreeting: false
-      showAppGroups: true
+      showGreeting: true
+      showAppGroups: false
       showAppUrls: false
       namespaceSelector:
         matchNames:
@@ -68,7 +68,7 @@ spec:
               icon: simple-icons:artifacthub
               url: https://artifacthub.io
             - name: "Hugging Face"
-              icon: simple-icons:openai
+              icon: fluent-emoji-high-contrast:hugging-face
               url: https://huggingface.co/models
         - group: Social
           bookmarks:

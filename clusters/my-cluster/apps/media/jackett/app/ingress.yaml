@@ -4,7 +4,7 @@ metadata:
   name: jackett-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: simple-icons:uniqlo
+    hajimari.io/icon: game-icons:chest-armor
     hajimari.io/enable: true
     hajimari.io/appName: "Jackett"
     hajimari.io/group: "Media"
