@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyfin-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: simple-icons:grafana
+    hajimari.io/enable: true
+    hajimari.io/appName: "Grafana"
+    hajimari.io/group: "Monitoring"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: jellyfin.cleoverse.home
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jellyfin-svc
+            port:
+              number: 80
