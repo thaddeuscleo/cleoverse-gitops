@@ -4,9 +4,9 @@ metadata:
   name: jackett-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: simple-icons:darkreader
+    hajimari.io/icon: simple-icons:uniqlo
     hajimari.io/enable: true
-    hajimari.io/appName: "jackett"
+    hajimari.io/appName: "Jackett"
     hajimari.io/group: "Media"
 spec:
   ingressClassName: traefik
