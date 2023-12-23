@@ -1,8 +1,11 @@
+<div align="center">
+<img src="https://raw.githubusercontent.com/thaddeuscleo/cleoverse-gitops/main/docs/src/assets/logo.png" align="center" width="144px" height="144px"/>
+
+
 ### My Home Operations Repository :octocat:
 
 _... managed with Flux_ 🤖
-
-
+</div>
 
 ## 📖 Overview
 
