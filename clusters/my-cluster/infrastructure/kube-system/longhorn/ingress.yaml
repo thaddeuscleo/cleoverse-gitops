@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: longhorn-ingress
+  namespace: kube-system
+  annotations:
+    hajimari.io/icon: simple-icons:rancher
+    hajimari.io/enable: true
+    hajimari.io/appName: "longhorn"
+    hajimari.io/group: "Monitoring"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: "longhorn.cleoverse.home"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: longhorn-frontend
+            port:
+              number: 80
