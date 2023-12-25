@@ -19,4 +19,6 @@ spec:
       env:
         - name: CODER_PG_CONNECTION_URL
           value: ${SECRET_CODER_DB_URL}
+      service:
+        type: ClusterIP
     
