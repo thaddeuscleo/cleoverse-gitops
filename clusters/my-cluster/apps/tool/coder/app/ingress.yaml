@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: coder-ingress
+  namespace: tool
+  annotations:
+    hajimari.io/icon: simple-icons:applearcade
+    hajimari.io/enable: true
+    hajimari.io/appName: "Coder"
+    hajimari.io/group: "Tool"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: "coder.${SECRET_LOCAL_DOMAIN}"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: coder
+            port:
+              number: 80
