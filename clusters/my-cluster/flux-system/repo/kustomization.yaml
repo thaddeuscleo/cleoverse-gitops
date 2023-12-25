@@ -9,3 +9,4 @@ resources:
 - bjw-charts.yaml
 - hajimari.yaml
 - bitnami.yaml
+- coder-v2.yaml
