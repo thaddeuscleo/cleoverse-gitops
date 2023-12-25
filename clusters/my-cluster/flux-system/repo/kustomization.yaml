@@ -8,3 +8,4 @@ resources:
 - longhorn.yaml
 - bjw-charts.yaml
 - hajimari.yaml
+- bitnami.yaml
