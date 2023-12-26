@@ -30,4 +30,8 @@ spec:
         users:
           - name: zitadel
             password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
-            options: [LOGIN]
+            options:
+              - LOGIN
+              - CREATEDB
+              - CONTROLJOB
+              - MODIFYCLUSTERSETTING
