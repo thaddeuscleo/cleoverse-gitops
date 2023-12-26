@@ -35,6 +35,10 @@ spec:
             User:
               Username: zitadel
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+              SSL:
+                Mode: disable  
             Admin:
               Username: postgres
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+              SSL:
+                Mode: disable  
