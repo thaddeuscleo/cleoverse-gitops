@@ -19,4 +19,13 @@ spec:
       persistence:
         library:
           existingClaim: pvc-immich
+    postgresql:
+      enabled: true
+    redis:
+      enabled: true
+    machine-learning:
+      persistence:
+        cache:
+          storageClass: "longhorn"
+    
     
