@@ -24,4 +24,10 @@ spec:
       persistentVolume:
         size: 5Gi
       storageClass: "longhorn"
-    
+    init:
+      provisioning:
+        enabled: true
+        users:
+          - name: zitadel
+          - password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+          - options: [LOGIN]
