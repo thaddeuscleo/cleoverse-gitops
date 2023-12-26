@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - ./pvc.yaml
   - ./release.yaml
-  # - ./ingress.yaml
+  - ./ingress.yaml
