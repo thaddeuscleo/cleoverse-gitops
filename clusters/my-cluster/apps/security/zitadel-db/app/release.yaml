@@ -24,4 +24,6 @@ spec:
       persistentVolume:
         size: 5Gi
       storageClass: "longhorn"
+    tls:
+      enabled: false
     
