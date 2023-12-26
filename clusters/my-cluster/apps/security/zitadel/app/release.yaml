@@ -26,6 +26,12 @@ spec:
         Database:
           postgres:
             Host: zitadel-db-postgresql.security.svc.cluster.local
+            Port: 5432
+            Database: postgres
+            MaxOpenConns: 40
+            MaxIdleConns: 20
+            MaxConnLifetime: 30m
+            MaxConnIdleTime: 5m
             User:
               Username: zitadel
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
