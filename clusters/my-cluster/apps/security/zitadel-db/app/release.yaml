@@ -35,3 +35,10 @@ spec:
               - CREATEDB
               - CONTROLJOB
               - MODIFYCLUSTERSETTING
+        databases:
+          - name: zitadel
+            options: [encoding='utf-8']
+            owners:
+              - zitadel
+            owners_with_grant_option:
+              - ALL PRIVILEGES
