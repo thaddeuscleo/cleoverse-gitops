@@ -42,5 +42,5 @@ spec:
               - zitadel
             owners_with_grant_option:
               - ALL
-      tls:
-        enabled: false
+    tls:
+      enabled: false
