@@ -24,7 +24,7 @@ spec:
           Enabled: false
       secretConfig:
         Database:
-          cockroach:
+          postgres:
             Host: crdb-public.security.svc.cluster.local
             User:
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}

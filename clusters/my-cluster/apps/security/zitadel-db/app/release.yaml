@@ -7,12 +7,20 @@ spec:
   interval: 1h
   chart:
     spec:
-      chart: cockroachdb
-      version: '11.2.3'
+      chart: postgresql
+      version: '13.2.25'
       sourceRef:
         kind: HelmRepository
-        name: cockroachdb
+        name: bitnami
         namespace: flux-system
       interval: 1m
   values:
-    
+    global:
+      postgresql:
+        auth:
+          postgresPassword: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+          username: zitadel
+          password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+    primary:
+      persistence:
+        existingClaim: "pvc-zitadel-db"
