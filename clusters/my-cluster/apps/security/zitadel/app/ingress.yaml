@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: zitadel-ingress
-  namespace: media
+  namespace: security
   annotations:
     hajimari.io/icon: simple-icons:springsecurity
     hajimari.io/enable: true
