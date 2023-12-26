@@ -29,5 +29,5 @@ spec:
         enabled: true
         users:
           - name: zitadel
-          - password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
-          - options: [LOGIN]
+            password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+            options: [LOGIN]
