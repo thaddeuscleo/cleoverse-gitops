@@ -25,6 +25,10 @@ spec:
       secretConfig:
         Database:
           postgres:
-            Host: crdb-public.security.svc.cluster.local
+            Host: zitadel-db-postgresql.security.svc.cluster.local
             User:
+              Username: zitadel
+              Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+            Admin:
+              Username: postgres
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
