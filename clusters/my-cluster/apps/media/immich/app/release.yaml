@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: immich
+  namespace: media
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: immich
+      version: '0.3.1'
+      sourceRef:
+        kind: HelmRepository
+        name: immich
+        namespace: flux-system
+      interval: 1m
+  values:
+    immich:
+      persistence:
+        library:
+          existingClaim: pvc-immich
+    
