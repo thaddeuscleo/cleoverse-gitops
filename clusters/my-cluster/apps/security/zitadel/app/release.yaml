@@ -25,5 +25,6 @@ spec:
       secretConfig:
         Database:
           cockroach:
+            Host: crdb-public.security.svc.cluster.local
             User:
               Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
