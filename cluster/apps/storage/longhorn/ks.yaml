@@ -7,7 +7,6 @@ spec:
   path: ./cluster/apps/storage/longhorn/app
   interval: 1h
   prune: true
-  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
