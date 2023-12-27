@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: jellyseer-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: game-icons:visored-helm
+    hajimari.io/enable: true
+    hajimari.io/appName: "Jellyseer"
+    hajimari.io/group: "Media"
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: jellyseer.${SECRET_LOCAL_DOMAIN}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: jellyseer
+            port:
+              number: 8080
