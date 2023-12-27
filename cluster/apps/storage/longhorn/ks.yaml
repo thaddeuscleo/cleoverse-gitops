@@ -4,7 +4,7 @@ metadata:
   name: cluster-longhorn
   namespace: flux-system
 spec:
-  path: ./cluster/apps/storage/longhorn/base
+  path: ./cluster/apps/storage/longhorn/app
   interval: 1h
   prune: true
   wait: true
