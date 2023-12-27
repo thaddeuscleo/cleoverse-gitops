@@ -5,4 +5,4 @@ resources:
   - ./repo
   - ./vars
   - ./flux-system
-  - ./apps.yaml
+  # - ./apps.yaml
