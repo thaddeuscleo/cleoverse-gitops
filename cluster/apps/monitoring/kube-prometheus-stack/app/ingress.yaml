@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-  - host: grafana.cleoverse.home
+  - host: grafana.${SECRET_LOCAL_DOMAIN}
     http:
       paths:
       - path: /
