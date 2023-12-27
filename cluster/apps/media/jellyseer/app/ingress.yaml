@@ -20,4 +20,5 @@ spec:
           service:
             name: jellyseer
             port:
+              name: http
               number: 8080
