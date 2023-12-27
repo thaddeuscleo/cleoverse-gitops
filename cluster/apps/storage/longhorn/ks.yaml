@@ -4,9 +4,10 @@ metadata:
   name: cluster-longhorn
   namespace: flux-system
 spec:
-  interval: 1h
   path: ./cluster/apps/storage/longhorn/app
+  interval: 1h
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: flux-system
