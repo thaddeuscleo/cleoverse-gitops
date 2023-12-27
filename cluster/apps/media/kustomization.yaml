@@ -4,7 +4,7 @@ resources:
   # - ./immich/ks.yaml
   - ./jackett/ks.yaml
   - ./jellyfin/ks.yaml
-  # - ./jellyseer/ks.yaml
+  - ./jellyseer/ks.yaml
   - ./lidarr/ks.yaml
   - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
