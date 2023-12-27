@@ -1,5 +1,5 @@
 creation_rules:
 - encrypted_regex: '^(data|stringData)$'
-  path_regex: '^.*\/my-cluster\/.*\.sops\.yaml$'
+  path_regex: '^.*\/base\/.*\.sops\.yaml$'
   age: >-
     age1whte605qwe7e5rkt0dscfr9ea4fcqfzrqhdz0phk2v6vckmftqlsmmwy5r
