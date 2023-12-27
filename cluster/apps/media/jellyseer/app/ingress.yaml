@@ -4,7 +4,7 @@ metadata:
   name: jellyseer-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: game-icons:visored-helm
+    hajimari.io/icon: game-icons:centurion-helmet
     hajimari.io/enable: true
     hajimari.io/appName: "Jellyseer"
     hajimari.io/group: "Media"
