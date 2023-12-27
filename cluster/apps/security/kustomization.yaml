@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   # - ./zitadel/ks.yaml
   # - ./zitadel-db/ks.yaml
-  - ./namespace/ks.yaml
+  - ./namespace.yaml

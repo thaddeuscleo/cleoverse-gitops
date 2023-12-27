@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   # - ./coder/ks.yaml
   # - ./coder-db/ks.yaml
-  - ./namespace/ks.yaml
+  - ./namespace.yaml

@@ -9,4 +9,4 @@ resources:
   # - ./qbittorrent/ks.yaml
   # - ./radarr/ks.yaml
   # - ./sonarr/ks.yaml
-  - ./namespace/ks.yaml
+  - ./namespace.yaml
