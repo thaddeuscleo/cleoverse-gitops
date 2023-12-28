@@ -17,9 +17,9 @@ spec:
     provider: cloudflare
     env:
       - name: CF_API_EMAIL
-        value: 
+        value: ${SECRET_CLOUDFLARE_API_EMAIL}
       - name: CF_API_KEY
-        value: 
+        value: ${SECRET_CLOUDFLARE_API_KEY}
     sources: ["crd", "ingress"]
     domainFilters: ["cleoverse.net"]
     logLevel: info
