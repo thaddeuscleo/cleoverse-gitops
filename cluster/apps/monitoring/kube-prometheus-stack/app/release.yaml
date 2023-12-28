@@ -13,7 +13,7 @@ spec:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
-      interval: 1m
+      interval: 5m
   values:
     alertmanager:
       alertmanagerSpec:
@@ -28,7 +28,7 @@ spec:
                   storage: 1Gi
     prometheus:
       prometheusSpec:
-        retention: 3d
+        retention: 2d
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
         storageSpec:
@@ -38,7 +38,7 @@ spec:
               accessModes: ["ReadWriteOnce"]
               resources:
                 requests:
-                  storage: 1Gi
+                  storage: 3Gi
     thanosRuler:
       thanosRulerSpec:
         retention: 24h
