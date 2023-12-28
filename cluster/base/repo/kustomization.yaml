@@ -12,3 +12,4 @@ resources:
 - coder-v2.yaml
 - zitadel.yaml
 - immich.yaml
+- external-dns.yaml
