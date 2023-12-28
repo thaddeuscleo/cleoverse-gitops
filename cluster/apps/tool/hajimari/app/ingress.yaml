@@ -19,5 +19,6 @@ spec:
             port:
               number: 3000
   tls:
-  - host: hajimari.${SECRET_LOCAL_DOMAIN}
-  secretName: wildcard-certs-tool
+  - host: 
+    - hajimari.${SECRET_LOCAL_DOMAIN}
+    secretName: wildcard-certs-tool
