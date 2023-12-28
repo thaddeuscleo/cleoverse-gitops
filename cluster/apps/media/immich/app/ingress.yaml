@@ -8,6 +8,7 @@ metadata:
     hajimari.io/enable: true
     hajimari.io/appName: "Immich"
     hajimari.io/group: "Media"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
@@ -21,3 +22,7 @@ spec:
             name: immich-server
             port:
               number: 3001
+  tls:
+  - hosts: 
+    - immich.${SECRET_LOCAL_DOMAIN}
+    secretName: wildcard-certs-media

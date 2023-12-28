@@ -8,6 +8,7 @@ metadata:
     hajimari.io/enable: true
     hajimari.io/appName: "Sonarr"
     hajimari.io/group: "Media"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
@@ -21,3 +22,7 @@ spec:
             name: sonarr-svc
             port:
               number: 80
+  tls:
+  - hosts: 
+    - sonarr.${SECRET_LOCAL_DOMAIN}
+    secretName: wildcard-certs-media

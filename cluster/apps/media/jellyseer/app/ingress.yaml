@@ -8,6 +8,7 @@ metadata:
     hajimari.io/enable: true
     hajimari.io/appName: "Jellyseer"
     hajimari.io/group: "Media"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
@@ -21,3 +22,7 @@ spec:
             name: jellyseerr
             port:
               number: 8080
+  tls:
+  - hosts: 
+    - jellyseer.${SECRET_LOCAL_DOMAIN}
+    secretName: wildcard-certs-media

@@ -8,6 +8,7 @@ metadata:
     hajimari.io/enable: true
     hajimari.io/appName: "Jellyfin"
     hajimari.io/group: "Media"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
@@ -21,3 +22,7 @@ spec:
             name: jellyfin-svc
             port:
               number: 80
+  tls:
+  - hosts: 
+    - jellyfin.${SECRET_LOCAL_DOMAIN}
+    secretName: wildcard-certs-media
