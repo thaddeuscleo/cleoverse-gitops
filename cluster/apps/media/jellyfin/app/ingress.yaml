@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - jellyfin.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: jellyfin-ingress-certs

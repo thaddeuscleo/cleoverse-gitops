@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - sonarr.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: sonarr-ingress-certs

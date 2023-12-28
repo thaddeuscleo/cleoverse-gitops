@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - immich.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: immich-ingress-certs

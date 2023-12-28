@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - jackett.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: jackett-ingress-certs

@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - grafana.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-monitoring
+    secretName: grafana-ingress-certs

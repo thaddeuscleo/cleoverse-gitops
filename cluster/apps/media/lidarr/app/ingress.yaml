@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - lidarr.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: lidarr-ingress-certs

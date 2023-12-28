@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - jellyseer.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-media
+    secretName: jellyseer-ingress-certs

@@ -25,4 +25,4 @@ spec:
   tls:
   - hosts: 
     - longhorn.${SECRET_LOCAL_DOMAIN}
-    secretName: wildcard-certs-longhorn-system
+    secretName: longhorn-ingress-certs
