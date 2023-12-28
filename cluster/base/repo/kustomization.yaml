@@ -13,3 +13,4 @@ resources:
 - zitadel.yaml
 - immich.yaml
 - external-dns.yaml
+- jetstack-charts.yaml
