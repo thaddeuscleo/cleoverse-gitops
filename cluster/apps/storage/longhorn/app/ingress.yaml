@@ -4,7 +4,7 @@ metadata:
   name: longhorn-ingress
   namespace: longhorn-system
   annotations:
-    hajimari.io/icon: simple-icons:rancher
+    hajimari.io/icon: game-icons:bull-horns
     hajimari.io/enable: true
     hajimari.io/appName: "Longhorn"
     hajimari.io/group: "Monitoring"
