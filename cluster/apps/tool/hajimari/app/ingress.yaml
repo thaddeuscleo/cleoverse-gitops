@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hajimari-ingress
+  namespace: tool
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: hajimari.${SECRET_LOCAL_DOMAIN}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hajimari
+            port:
+              number: 3000
+  tls:
+  - host: hajimari.${SECRET_LOCAL_DOMAIN}
+  secretName: wildcard-certs-tool
