@@ -4,4 +4,4 @@ resources:
   - ./release.yaml
   - ./ingress.yaml
   - ./svc-monitor.yaml
-  - ./prometheus.yaml
+  # - ./prometheus.yaml
