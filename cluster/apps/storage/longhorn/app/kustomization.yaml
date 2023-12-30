@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - ./release.yaml
   - ./ingress.yaml
-  # - ./svc-monitor.yaml
-  # - ./prometheus.yaml
+  - ./svc-monitor.yaml
+  - ./prometheus.yaml
