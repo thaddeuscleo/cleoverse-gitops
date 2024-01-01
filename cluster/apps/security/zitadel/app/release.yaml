@@ -24,8 +24,8 @@ spec:
           Enabled: false
       secretConfig:
         ExternalDomain: sso.${SECRET_LOCAL_DOMAIN}
-        ExternalSecure: false
-        ExternalPort: 80
+        ExternalSecure: true
+        ExternalPort: 443
         Database:
           postgres:
             Host: zitadel-db-postgresql.security.svc.cluster.local
