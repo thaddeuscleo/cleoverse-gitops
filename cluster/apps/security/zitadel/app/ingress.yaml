@@ -8,6 +8,7 @@ metadata:
     hajimari.io/enable: true
     hajimari.io/appName: "Zitadel"
     hajimari.io/group: "Security"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: traefik
   rules:
@@ -21,3 +22,7 @@ spec:
             name: zitadel
             port:
               number: 8080
+  tls:
+  - hosts: 
+    - longhorn.${SECRET_LOCAL_DOMAIN}
+    secretName: longhorn-ingress-certs
