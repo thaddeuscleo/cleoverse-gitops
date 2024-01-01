@@ -7,8 +7,19 @@ spec:
   instances: 3
   imageName: ghcr.io/cloudnative-pg/postgresql:16.1-12
   primaryUpdateStrategy: unsupervised
+  bootstrap:
+    initdb:
+      database: postgres
+      owner: postgres
+      secret:
+        name: cloudnative-pg-secret
+      postInitTemplateSQL:
+        - CREATE EXTENSION postgis;
+        - CREATE EXTENSION postgis_topology;
+        - CREATE EXTENSION fuzzystrmatch;
+        - CREATE EXTENSION postgis_tiger_geocoder;
   storage:
-    size: 5Gi
+    size: 2Gi
     storageClass: longhorn
   superuserSecret:
     name: cloudnative-pg-secret
