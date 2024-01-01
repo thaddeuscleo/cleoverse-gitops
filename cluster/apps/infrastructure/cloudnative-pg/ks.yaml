@@ -19,6 +19,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
+  dependsOn:
+    - name: cluster-cnpg-app
   path: ./cluster/apps/infrastructure/cloudnative-pg/cluster
   prune: true
   sourceRef:
