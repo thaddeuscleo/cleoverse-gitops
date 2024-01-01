@@ -28,7 +28,7 @@ spec:
         ExternalPort: 443
         Database:
           postgres:
-            Host: zitadel-db-postgresql.security.svc.cluster.local
+            Host: pg-16-cluster-rw.infrastructure.svc.cluster.local
             Port: 5432
             Database: postgres
             MaxOpenConns: 40
