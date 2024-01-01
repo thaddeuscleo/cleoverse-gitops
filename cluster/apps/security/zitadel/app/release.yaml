@@ -42,6 +42,6 @@ spec:
                 Mode: disable  
             Admin:
               Username: postgres
-              Password: ${SECRET_ZITADEL_CRDB_USER_PASSWORD}
+              Password: ${SECRET_POSTGRES_PASSWORD}
               SSL:
                 Mode: disable
