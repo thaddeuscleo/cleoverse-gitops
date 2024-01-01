@@ -24,7 +24,7 @@ spec:
           Enabled: false
       secretConfig:
         ExternalDomain: sso.${SECRET_LOCAL_DOMAIN}
-        ExternalSecure: true
+        ExternalSecure: false
         ExternalPort: 80
         Database:
           postgres:
