@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: sabnzbd-svc
+  namespace: media
+subsets:
+- addresses:
+  - ip: ${SECRET_MEDIA_STACK_IP_ADDRESS}
+  ports:
+  - name: sabnzbd-app
+    port: 80
+    protocol: TCP

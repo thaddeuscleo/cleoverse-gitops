@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sabnzbd-svc
+  namespace: media
+spec:
+  ports:
+  - name: sabnzbd-app
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  clusterIP: None
+  type: ClusterIP

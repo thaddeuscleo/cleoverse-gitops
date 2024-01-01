@@ -8,5 +8,6 @@ resources:
   - ./lidarr/ks.yaml
   - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
+  - ./sabnzbd/ks.yaml
   - ./sonarr/ks.yaml
   - ./namespace.yaml

@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sabnzbd-ingress
+  namespace: media
+  annotations:
+    hajimari.io/icon: game-icons:chest-armor
+    hajimari.io/enable: true
+    hajimari.io/appName: "Sabnzbd"
+    hajimari.io/group: "Media"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: "sabnzbd.${SECRET_LOCAL_DOMAIN}"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sabnzbd-svc
+            port:
+              number: 80
+  tls:
+  - hosts: 
+    - sabnzbd.${SECRET_LOCAL_DOMAIN}
+    secretName: sabnzbd-ingress-certs
