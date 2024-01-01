@@ -30,7 +30,7 @@ spec:
           postgres:
             Host: pg-16-cluster-rw.infrastructure.svc.cluster.local
             Port: 5432
-            Database: postgres
+            Database: zitadel
             MaxOpenConns: 40
             MaxIdleConns: 20
             MaxConnLifetime: 30m
