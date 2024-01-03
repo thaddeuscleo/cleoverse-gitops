@@ -9,6 +9,6 @@ spec:
     app: lldap
   ports:
     - name: ldap
-      port: 389
+      port: 3890
       protocol: TCP
       targetPort: 389
