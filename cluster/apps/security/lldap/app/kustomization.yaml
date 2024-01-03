@@ -4,3 +4,4 @@ resources:
   - ./secret.sops.yaml
   - ./release.yaml
   - ./ingress.yaml
+  - ./service.yaml
