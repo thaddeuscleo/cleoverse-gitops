@@ -6,7 +6,9 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: lldap
+    app.kubernetes.io/component: main
+    app.kubernetes.io/instance: lldap
+    app.kubernetes.io/name: lldap
   ports:
     - name: ldap
       port: 3890
