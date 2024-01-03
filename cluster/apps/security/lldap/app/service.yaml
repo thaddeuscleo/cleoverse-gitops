@@ -5,10 +5,10 @@ metadata:
   namespace: security
 spec:
   type: LoadBalancer
-  selector:                                                                                                                                                                                       │
+  selector:
     app: lldap
   ports:
-    - name: ldap                                                                                                                                                                                    │
-      port: 389                                                                                                                                                                                     │
-      protocol: TCP                                                                                                                                                                                 │
+    - name: ldap
+      port: 389
+      protocol: TCP
       targetPort: 389
