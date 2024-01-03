@@ -37,6 +37,7 @@ spec:
           - monitoring
           - media
           - longhorn-system
+          - security
       globalBookmarks:
         - group: Mail
           bookmarks:
