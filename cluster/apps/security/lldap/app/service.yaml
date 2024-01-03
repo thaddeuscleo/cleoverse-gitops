@@ -5,9 +5,7 @@ metadata:
   namespace: security
 spec:
   type: LoadBalancer
-  selector:                                                                                                                                                                                       │
-    app.kubernetes.io/component: main                                                                                                                                                             │
-    app.kubernetes.io/instance: lldap                                                                                                                                                             │
+  selector:                                                                                                                                                                                       │                                                                                                                                                             │
     app.kubernetes.io/name: lldap
   ports:
     - name: ldap                                                                                                                                                                                    │
