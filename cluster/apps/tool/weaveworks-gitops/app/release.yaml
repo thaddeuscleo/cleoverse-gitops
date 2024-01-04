@@ -23,7 +23,7 @@ spec:
       className: traefik
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
-        hajimari.io/enable: true
+        hajimari.io/enable: "true"
         hajimari.io/appName: "Weave GitOps"
         hajimari.io/group: Tool
         cert-manager.io/cluster-issuer: letsencrypt-prod
