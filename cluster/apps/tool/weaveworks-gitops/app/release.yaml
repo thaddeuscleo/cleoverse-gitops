@@ -22,10 +22,10 @@ spec:
       enabled: true
       className: traefik
       annotations:
+        hajimari.io/icon: mdi:sawtooth-wave
         hajimari.io/enable: true
         hajimari.io/appName: "Weave GitOps"
         hajimari.io/group: Tool
-        hajimari.io/icon: mdi:sawtooth-wave
         cert-manager.io/cluster-issuer: letsencrypt-prod
       hosts:
         - host: &host gitops.${SECRET_LOCAL_DOMAIN}
