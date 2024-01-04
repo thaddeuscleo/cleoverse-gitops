@@ -15,3 +15,4 @@ resources:
 - external-dns.yaml
 - jetstack-charts.yaml
 - cloudnative-pg.yaml
+- weaveworks.yaml
