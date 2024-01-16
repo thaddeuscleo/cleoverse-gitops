@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: Secret
-metadata:
-    name: cluster-secret-vars
-    namespace: flux-system
-type: Opaque
-stringData:
-  HELLO: helloa
