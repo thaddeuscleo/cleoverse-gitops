@@ -1,33 +1,50 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
   name: redis
-  namespace: infrastructure
 spec:
-  interval: 30m
+  interval: 60m
   chart:
     spec:
-      chart: redis
-      version: 18.6.4
+      chart: app-template
+      version: 2.4.0
+      interval: 60m
       sourceRef:
         kind: HelmRepository
-        name: bitnami
+        name: bjw-s-charts
         namespace: flux-system
+  maxHistory: 2
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
   values:
-    auth:
-      enabled: false
-      sentinel: false
-    master:
-      persistence:
-        enabled: false
-    replica:
-      persistence:
-        enabled: false
-    sentinel:
-      enabled: true
-      masterSet: redis-master
-      getMasterTimeout: 10
-      startupProbe:
-        failureThreshold: 2
-      persistence:
-        enabled: false
+    controllers:
+      main:
+        containers:
+          main:
+            image:
+              repository: public.ecr.aws/docker/library/redis
+              tag: 7.2.4
+            env:
+              REDIS_REPLICATION_MODE: master
+            resources:
+              requests:
+                cpu: 5m
+                memory: 10M
+              limits:
+                memory: 500M
+    service:
+      main:
+        ports:
+          http:
+            enabled: false
+          redis:
+            enabled: true
+            port: 6379
