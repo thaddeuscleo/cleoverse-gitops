@@ -5,4 +5,4 @@ metadata:
     namespace: flux-system
 type: Opaque
 stringData:
-  HELLO: hello
+  HELLO: helloa
