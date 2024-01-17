@@ -48,6 +48,24 @@ spec:
         ports:
           http:
             port: 8080
+    ingress:
+      main:
+        enabled: true
+        className: "traefik"
+        annotations:
+          hajimari.io/icon: mdi:text-box-multiple
+          cert-manager.io/cluster-issuer: letsencrypt-prod
+        hosts:
+          - host: &host "outline.${SECRET_LOCAL_DOMAIN}"
+            paths:
+              - path: /
+                service:
+                  name: main
+                  port: http
+        tls:
+          - hosts:
+            - *host
+            secretName: lldap-ingress-certs
     persistence:
       data:
         enabled: true
