@@ -54,6 +54,9 @@ spec:
         className: "traefik"
         annotations:
           hajimari.io/icon: mdi:text-box-multiple
+          hajimari.io/enable: "true"
+          hajimari.io/appName: "outline"
+          hajimari.io/group: "Tool"
           cert-manager.io/cluster-issuer: letsencrypt-prod
         hosts:
           - host: &host "outline.${SECRET_LOCAL_DOMAIN}"
