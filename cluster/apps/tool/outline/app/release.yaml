@@ -19,9 +19,9 @@ spec:
       main:
         initContainers:
           init-db:
-            image: ghcr.io/onedr0p/postgres-initdb:14.6
-            imagePullPolicy: IfNotPresent
-            envFrom:
+            image: ghcr.io/onedr0p/postgres-initdb
+            tag: 16
+            envFrom: &envFrom
               - secretRef:
                   name: outline-secret
         containers:
@@ -29,9 +29,7 @@ spec:
             image:
               repository: docker.io/outlinewiki/outline
               tag: 0.74.0
-            envFrom:
-              - secretRef:
-                  name: outline-secret
+            envFrom: *envFrom
             env:
               PORT: 8080
               REDIS_URL: redis://redis.infrastructure.svc.cluster.local:6379
