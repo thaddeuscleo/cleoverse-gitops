@@ -15,14 +15,16 @@ spec:
         namespace: flux-system
       interval: 5m  
   values:
-    initContainers:
-      init-db:
-        image: ghcr.io/onedr0p/postgres-initdb:14.6
-        imagePullPolicy: IfNotPresent
-        envFrom:
-          - secretRef:
-              name: outline-secret
-    containers:
+    controllers:
+      main:
+        initContainers:
+          init-db:
+            image: ghcr.io/onedr0p/postgres-initdb:14.6
+            imagePullPolicy: IfNotPresent
+            envFrom:
+              - secretRef:
+                  name: outline-secret
+        containers:
           main:
             image:
               repository: docker.io/outlinewiki/outline
