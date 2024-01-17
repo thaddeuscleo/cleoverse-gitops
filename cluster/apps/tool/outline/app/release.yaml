@@ -22,27 +22,34 @@ spec:
         envFrom:
           - secretRef:
               name: outline-secret
-    controller:
-      replicas: 1
-      strategy: Recreate
-    image:
-      repository: docker.io/outlinewiki/outline
-      tag: 0.74.0
-    envFrom:
-      - secretRef:
-          name: outline-secret
-    command: ["/bin/sh", "-c", "yarn db:migrate --env=production-ssl-disabled && yarn start --env=production-ssl-disabled"]
+    containers:
+          main:
+            image:
+              repository: docker.io/outlinewiki/outline
+              tag: 0.74.0
+            envFrom:
+              - secretRef:
+                  name: outline-secret
+            env:
+              PORT: 8080
+              REDIS_URL: redis://redis.infrastructure.svc.cluster.local:6379
+            command:
+              [
+                "/bin/sh",
+                "-c",
+                "yarn db:migrate --env=production-ssl-disabled && yarn start --env=production-ssl-disabled",
+              ]
+            resources:
+              requests:
+                cpu: 10m
+                memory: 400Mi
+              limits:
+                memory: 2Gi
     service:
       main:
         ports:
           http:
-            port: 80
-    resources:
-      requests:
-        cpu: 10m
-        memory: 400Mi
-      limits:
-        memory: 2Gi
+            port: 8080
     persistence:
       data:
         enabled: true
