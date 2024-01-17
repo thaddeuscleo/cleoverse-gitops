@@ -4,7 +4,7 @@ metadata:
   name: sabnzbd-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: game-icons:chest-armor
+    hajimari.io/icon: ic:round-download
     hajimari.io/enable: true
     hajimari.io/appName: "Sabnzbd"
     hajimari.io/group: "Media"

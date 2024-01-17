@@ -4,7 +4,7 @@ metadata:
   name: zitadel-ingress
   namespace: security
   annotations:
-    hajimari.io/icon: simple-icons:springsecurity
+    hajimari.io/icon: cib:open-id
     hajimari.io/enable: true
     hajimari.io/appName: "Zitadel"
     hajimari.io/group: "Security"

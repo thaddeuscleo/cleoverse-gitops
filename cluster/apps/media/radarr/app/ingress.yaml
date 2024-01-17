@@ -4,7 +4,7 @@ metadata:
   name: radarr-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: game-icons:heavy-helm
+    hajimari.io/icon: mingcute:movie-fill
     hajimari.io/enable: true
     hajimari.io/appName: "Radarr"
     hajimari.io/group: "Media"

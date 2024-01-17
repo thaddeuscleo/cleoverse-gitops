@@ -4,7 +4,7 @@ metadata:
   name: qbittorrent-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: game-icons:elf-helmet
+    hajimari.io/icon: simple-icons:bittorrent
     hajimari.io/enable: true
     hajimari.io/appName: "qbittorrent"
     hajimari.io/group: "Media"

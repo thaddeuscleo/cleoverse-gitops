@@ -4,7 +4,7 @@ metadata:
   name: sonarr-ingress
   namespace: media
   annotations:
-    hajimari.io/icon: game-icons:samurai-helmet
+    hajimari.io/icon: material-symbols:tv-gen-sharp
     hajimari.io/enable: true
     hajimari.io/appName: "Sonarr"
     hajimari.io/group: "Media"
