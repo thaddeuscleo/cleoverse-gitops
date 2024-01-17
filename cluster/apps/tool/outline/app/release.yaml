@@ -31,9 +31,6 @@ spec:
               repository: docker.io/outlinewiki/outline
               tag: 0.74.0
             envFrom: *envFrom
-            env:
-              PORT: 8080
-              REDIS_URL: redis://redis.infrastructure.svc.cluster.local:6379
             command:
               [
                 "/bin/sh",
