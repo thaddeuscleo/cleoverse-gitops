@@ -6,3 +6,4 @@ resources:
   # - ./coder-db/ks.yaml
   - ./hajimari/ks.yaml
   - ./weaveworks-gitops/ks.yaml
+  - ./outline/ks.yaml
