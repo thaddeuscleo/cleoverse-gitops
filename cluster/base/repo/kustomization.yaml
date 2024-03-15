@@ -16,3 +16,4 @@ resources:
 - jetstack-charts.yaml
 - cloudnative-pg.yaml
 - weaveworks.yaml
+- bytewax.yaml
