@@ -16,4 +16,3 @@ resources:
 - jetstack-charts.yaml
 - cloudnative-pg.yaml
 - weaveworks.yaml
-- truecharts.yaml
