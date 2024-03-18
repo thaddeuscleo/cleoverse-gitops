@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: redpanda-ingress
+  namespace: infrastructure
+  annotations:
+    hajimari.io/icon: skill-icons:kafka
+    hajimari.io/enable: true
+    hajimari.io/appName: "Redpanda"
+    hajimari.io/group: "Infrastructure"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: traefik
+  rules:
+  - host: redpanda.${SECRET_LOCAL_DOMAIN}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sonarr-svc
+            port:
+              number: 80
+  tls:
+  - hosts: 
+    - redpanda.${SECRET_LOCAL_DOMAIN}
+    secretName: redpanda-ingress-certs
