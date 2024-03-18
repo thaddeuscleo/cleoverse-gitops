@@ -27,7 +27,7 @@ spec:
     hajimari:
       title: "Cleo Hajimari"
       name: "Thaddeus Cleo"
-      darkTheme: espresso
+      darkTheme: blackboard
       showGreeting: true
       showAppGroups: false
       showAppUrls: false
@@ -38,6 +38,7 @@ spec:
           - media
           - longhorn-system
           - security
+          - infrastructure
       globalBookmarks:
         - group: Mail
           bookmarks:
