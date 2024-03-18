@@ -15,6 +15,9 @@ spec:
         namespace: flux-system
       interval: 15m
   values:
+    extraArgs:
+      - '--dns01-recursive-nameservers-only'
+      - '--dns01-recursive-nameservers=192.168.0.150:53'
     installCRDs: true
     prometheus:
       enabled: true
