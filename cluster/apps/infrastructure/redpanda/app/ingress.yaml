@@ -19,9 +19,9 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: sonarr-svc
+            name: redpanda-console
             port:
-              number: 80
+              number: 8080
   tls:
   - hosts: 
     - redpanda.${SECRET_LOCAL_DOMAIN}
