@@ -20,7 +20,7 @@ spec:
         value: ${SECRET_CLOUDFLARE_API_EMAIL}
       - name: CF_API_KEY
         value: ${SECRET_CLOUDFLARE_API_KEY}
-    sources: ["crd", "ingress"]
+    sources: ["crd", "ingress", "service"]
     domainFilters: ["cleoverse.net"]
     logLevel: info
     serviceMonitor:
