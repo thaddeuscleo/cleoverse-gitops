@@ -28,6 +28,14 @@ spec:
   values:
     tls:
       enabled: false
+    external:
+      enabled: true
+      domain: redpanda.home.cleoverse.net
+      type: NodePort
+    service:
+      internal:
+        annotations:
+          "external-dns.alpha.kubernetes.io/hostname": redpanda.home.cleoverse.net
     storage:
       persistentVolume:
         size: 3Gi
