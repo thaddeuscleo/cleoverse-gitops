@@ -36,6 +36,7 @@ spec:
       internal:
         annotations:
           "external-dns.alpha.kubernetes.io/hostname": redpanda.home.cleoverse.net
+          "external-dns.alpha.kubernetes.io/endpoints-type": NodeExternalIP
     storage:
       persistentVolume:
         size: 3Gi
