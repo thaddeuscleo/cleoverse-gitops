@@ -36,7 +36,7 @@ spec:
       internal:
         annotations:
           "external-dns.alpha.kubernetes.io/hostname": cleoverse.net
-          "external-dns.alpha.kubernetes.io/endpoints-type": NodeExternalIP
+          "external-dns.alpha.kubernetes.io/endpoints-type": HostIP
     storage:
       persistentVolume:
         size: 3Gi
