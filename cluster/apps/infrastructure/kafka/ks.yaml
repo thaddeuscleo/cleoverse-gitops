@@ -1,3 +1,4 @@
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -6,6 +7,19 @@ metadata:
 spec:
   interval: 1h
   path: ./cluster/apps/infrastructure/kafka/app
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---    
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: cluster-kafka-cluster
+  namespace: flux-system
+spec:
+  interval: 1h
+  path: ./cluster/apps/infrastructure/kafka/cluster
   prune: true
   sourceRef:
     kind: GitRepository
