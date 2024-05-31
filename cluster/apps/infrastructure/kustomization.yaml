@@ -6,4 +6,4 @@ resources:
   - ./cloudnative-pg/ks.yaml
   - ./redis/ks.yaml
   - ./redpanda/ks.yaml
-  # - ./kafka/ks.yaml
+  - ./kafka/ks.yaml
