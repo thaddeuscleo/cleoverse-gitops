@@ -17,3 +17,4 @@ resources:
 - cloudnative-pg.yaml
 - weaveworks.yaml
 - redpanda-data.yaml
+- strimzi.yaml
