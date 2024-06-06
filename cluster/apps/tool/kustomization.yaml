@@ -7,3 +7,4 @@ resources:
   - ./hajimari/ks.yaml
   - ./weaveworks-gitops/ks.yaml
   - ./outline/ks.yaml
+  - ./rancher/ks.yaml
