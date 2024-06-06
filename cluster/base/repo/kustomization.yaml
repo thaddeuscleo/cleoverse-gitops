@@ -18,4 +18,4 @@ resources:
 - weaveworks.yaml
 - redpanda-data.yaml
 - strimzi.yaml
-- racher-latest.yaml
+- rancher-latest.yaml
