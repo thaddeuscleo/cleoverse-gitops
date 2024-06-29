@@ -20,7 +20,7 @@ spec:
         - name: CODER_PG_CONNECTION_URL
           value: ${SECRET_CODER_DB_URL}
         - name: CODER_ACCESS_URL
-          value: "coder.${SECRET_LOCAL_DOMAIN}"
+          value: "https://coder.${SECRET_LOCAL_DOMAIN}"
       service:
         type: ClusterIP
     
