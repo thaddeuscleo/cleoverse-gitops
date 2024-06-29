@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   # - ./coder/ks.yaml
-  # - ./coder-db/ks.yaml
+  - ./coder-db/ks.yaml
   - ./hajimari/ks.yaml
   - ./weaveworks-gitops/ks.yaml
   - ./outline/ks.yaml
