@@ -5,6 +5,9 @@ metadata:
   namespace: tool
 spec:
   interval: 1h
+  install:
+    remediation:
+      retries: -1
   chart:
     spec:
       chart: coder
