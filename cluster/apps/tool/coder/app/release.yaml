@@ -21,6 +21,6 @@ spec:
           value: ${SECRET_CODER_DB_URL}
         - name: CODER_ACCESS_URL
           value: "https://coder.${SECRET_LOCAL_DOMAIN}"
-      service:
-        type: ClusterIP
+      # service:
+      #   type: ClusterIP
     
