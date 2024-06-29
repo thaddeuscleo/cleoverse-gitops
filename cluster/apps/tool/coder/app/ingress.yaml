@@ -22,7 +22,7 @@ spec:
             name: coder
             port:
               number: 80
-    tls:
+  tls:
     - hosts: 
       - coder.${SECRET_LOCAL_DOMAIN}
       secretName: coder-ingress-certs
