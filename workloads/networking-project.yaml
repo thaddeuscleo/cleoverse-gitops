@@ -10,7 +10,7 @@ spec:
   sourceRepos:
   - '*'
   destinations:
-  - namespace: traefik-networking
+  - namespace: traefik-system
     server: https://kubernetes.default.svc
   - namespace: metallb-system
     server: https://kubernetes.default.svc
