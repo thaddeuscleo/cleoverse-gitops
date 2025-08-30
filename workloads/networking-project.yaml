@@ -9,3 +9,8 @@ spec:
   description: Cluster Networking Stacks Project
   sourceRepos:
   - '*'
+  destinations:
+  - namespace: traefik-networking
+    server: https://kubernetes.default.svc
+  - namespace: metallb-system
+    server: https://kubernetes.default.svc
