@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metallb-loadbalancer
+spec:
+  destination:
+    namespace: metallb-system
+    server: https://kubernetes.default.svc
+  source:
+    path: ''
+    repoURL: https://metallb.github.io/metallb
+    targetRevision: 0.15.2
+    chart: metallb
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      enabled: true
