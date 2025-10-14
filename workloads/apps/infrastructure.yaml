@@ -1,20 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: metallb-apps
+  name: infrastructure-app
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    app.kubernetes.io/part-of: root
+    app.kubernetes.io/component: infrastructure
 spec:
-  project: default
+  project: infrastructure
   source:
     repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
     targetRevision: HEAD
-    path: ./workloads/networks/metallb
+    path: ./workloads/infrastructure
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
   syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
