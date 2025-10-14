@@ -14,6 +14,8 @@ spec:
     repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
     targetRevision: HEAD
     path: ./workloads/networking
+    directory:
+      include: "applications.yaml"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
