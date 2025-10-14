@@ -1,16 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik
-  namespace: argocd
+  name: traefik-ingress
 spec:
-  project: networking
-  source:
-    chart: traefik
-    repoURL: https://traefik.github.io/charts
-    targetRevision: 37.0.0
-    helm:
-      releaseName: traefik
   destination:
-    server: "https://kubernetes.default.svc"
     namespace: traefik-system
+    server: https://kubernetes.default.svc
+  source:
+    path: ''
+    repoURL: https://traefik.github.io/charts
+    targetRevision: 37.1.2
+    chart: traefik
+  sources: []
+  project: default
+  syncPolicy:
+    automated: null
