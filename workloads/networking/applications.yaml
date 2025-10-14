@@ -22,7 +22,7 @@ spec:
       source:
         repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
         targetRevision: HEAD
-        path: workloads/networking/{{path}}
+        path: ./workloads/networking/{{path}}
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{name}}-system'

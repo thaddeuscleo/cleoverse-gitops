@@ -2,6 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: metallb-loadbalancer
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+  labels:
+    app.kubernetes.io/part-of: networking
+    app.kubernetes.io/component: ingress-controller
 spec:
   destination:
     namespace: metallb-system
@@ -12,9 +18,10 @@ spec:
     targetRevision: 0.15.2
     chart: metallb
   sources: []
-  project: default
+  project: networking
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
-      prune: false
-      selfHeal: false
-      enabled: true
+      prune: true
+      selfHeal: true
