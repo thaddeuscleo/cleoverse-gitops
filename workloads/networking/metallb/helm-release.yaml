@@ -17,6 +17,10 @@ spec:
     repoURL: https://metallb.github.io/metallb
     targetRevision: 0.15.2
     chart: metallb
+    helm:
+      valuesObject:
+        speaker:
+          ignoreExcludeLB: true
   sources: []
   project: networking
   syncPolicy:
