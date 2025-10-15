@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: security-apps
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: sealed-secrets
+            path: sealed-secrets
+  template:
+    metadata:
+      name: '{{name}}'
+      namespace: argocd
+      labels:
+        app.kubernetes.io/part-of: security
+    spec:
+      project: security
+      source:
+        repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
+        targetRevision: HEAD
+        path: ./workloads/security/{{path}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}-system'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
