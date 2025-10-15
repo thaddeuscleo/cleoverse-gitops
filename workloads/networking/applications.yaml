@@ -11,6 +11,8 @@ spec:
             path: metallb
           - name: traefik
             path: traefik
+          - name: external-dns
+            path: external-dns
   template:
     metadata:
       name: '{{name}}'
