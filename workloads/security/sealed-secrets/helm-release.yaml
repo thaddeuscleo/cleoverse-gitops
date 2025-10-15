@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sealed-secrets-operator
+  name: sealed-secrets-release
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "2"

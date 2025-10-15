@@ -1,22 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: traefik-ingress
+  name: metallb-release
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "0"
   labels:
     app.kubernetes.io/part-of: networking
     app.kubernetes.io/component: ingress-controller
 spec:
   destination:
-    namespace: traefik-system
+    namespace: metallb-system
     server: https://kubernetes.default.svc
   source:
     path: ''
-    repoURL: https://traefik.github.io/charts
-    targetRevision: 37.1.2
-    chart: traefik
+    repoURL: https://metallb.github.io/metallb
+    targetRevision: 0.15.2
+    chart: metallb
   sources: []
   project: networking
   syncPolicy:
