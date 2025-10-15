@@ -14,18 +14,18 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: argoproj/rollouts-demo:blue
+          image: argoproj/rollouts-demo:yellow
   strategy:
     canary:
       steps:
         - setWeight: 1
-        - pause: { duration: 50s }
+        - pause: { duration: 1m }
         - setWeight: 10
-        - pause: { duration: 50s }
+        - pause: { duration: 1m }
         - setWeight: 30
-        - pause: { duration: 50s }
+        - pause: { duration: 2m }
         - setWeight: 60
-        - pause: { duration: 50s }
+        - pause: { duration: 2m }
         - setWeight: 100
 # ---
 # kind: Service
