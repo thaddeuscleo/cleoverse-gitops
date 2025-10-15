@@ -1,0 +1,18 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: cloudflare-api-key
+  namespace: external-dns-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    app.kubernetes.io/part-of: networking
+    app.kubernetes.io/component: dns-management
+spec:
+  encryptedData:
+    apiKey: AgCjldecMSYIOCkeYPAL4LJ6AXYj3kfAoi3LYbzeujTW8D3jtzD7fy45GPXnhk5krl4uOjkewzCOIXApF3r8E9ynQ8z6YHcAJHASc4NAh9ShPQ4v4WUympfdnOR3uKYHw0AUQTKrKnJOrcORsCzrFZ1lN+B7u6zGQEj8igbAO0fYiJvGyIxFfV2XloaqmMWCEdBUvc3N1+AUFI+rGNgi+aWim4QHUjMEUAtmEqaUkyU9Wd/iaY88CMJ6Li82taRyYj+m7RyvUW7xYl8y2+vIs+Gbsi/eDzgEZ4QRqAXfnx2OMpfITTiiuFHlb8AvMxXJsWVajYYUqsFxGQgEsFuteHhzU/zrtjAOrtP3zJlyJAg5pH/3mVuR8DAFMRFj2ngOc4EbxLbuIyZ3VTsyMCsdGCaCzwQyBrIZREIDoQSndLiGR6xdNrrpZb8QuhZhQKydsepe1PFbFqKF0n3DVoHCZoH9+F7sfwotwcp7tBRN5KFzCPqB5OFmxqJTHDVxX5gRA9iQrt13u7WaV8gese1pdvYAoBLINxDl9LILBjTJsDm4n9/yIjana2u8IXNKT05OPMo0yA2UfRUAv3SLOk4IffLfzIDiSnVId4IRdOLdODyiCYYrJsRXkuxLL56Utjy9hkuBnPSzLg3IanP6mf4nKDDx1zPXB8HbnDzNhGvU/MQqbGXXvm1ZCSFqPnCkISnTEMkJa5maAua3gT93vz96y5SW/RF6YJfQzHD0qqyn6dTWlm92KVIgx7eO
+  template:
+    metadata:
+      name: cloudflare-api-key
+      namespace: external-dns-system
