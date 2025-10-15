@@ -16,16 +16,6 @@ spec:
         - name: nginx
           image: nginx:1.24
   strategy:
-    canary:
-      steps:
-        - setWeight: 20
-          pause: {}
-        - setWeight: 40
-        - pause:
-          duration: 1m
-        - setWeight: 60
-        - pause:
-          duration: 1m
-        - setWeight: 80
-        - pause:
-          duration: 1m
+    blueGreen: # A new field for the Blue Green strategy options
+      previewService: my-service-preview # Reference to a service
+      activeService: my-service-active
