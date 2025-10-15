@@ -1,4 +1,3 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -14,7 +13,6 @@ spec:
     namespace: cert-manager
     server: https://kubernetes.default.svc
   source:
-    path: ''
     repoURL: oci://quay.io/jetstack/charts/cert-manager
     targetRevision: 1.19.0
   project: utilities
