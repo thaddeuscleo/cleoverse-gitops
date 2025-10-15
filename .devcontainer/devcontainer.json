@@ -15,7 +15,8 @@
 		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
 		"ghcr.io/audacioustux/devcontainers/k9s:1": {},
 		"ghcr.io/devcontainers-extra/features/argo-cd:1": {},
-		"ghcr.io/devcontainers-extra/features/kubectx-kubens:1": {}
+		"ghcr.io/devcontainers-extra/features/kubectx-kubens:1": {},
+		"ghcr.io/gickis/devcontainer-features/kubeseal:1": {}
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
