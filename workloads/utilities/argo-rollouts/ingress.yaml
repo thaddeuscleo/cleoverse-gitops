@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argo-rollouts-dashboard-ingress
+  namespace: argo-rollouts
+  annotations:
+    cert-manager.io/cluster-issuer: cf-letsencrypt-prod
+    external-dns.alpha.kubernetes.io/hostname: argo-rollouts.home.cleoverse.net
+spec:
+  ingressClassName: traefik-release
+  rules:
+  - host: argo-rollouts.home.cleoverse.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argo-rollouts-release-dashboard
+            port:
+              name: dashboard
+  tls:
+  - hosts: 
+    - argo-rollouts.home.cleoverse.net
+    secretName: argo-rollouts-dashboard-ingress-certs
