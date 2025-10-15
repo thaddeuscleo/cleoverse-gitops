@@ -9,8 +9,8 @@ spec:
         elements:
           - name: metallb
             path: metallb
-          # - name: traefik
-          #   path: traefik
+          - name: traefik
+            path: traefik
   template:
     metadata:
       name: '{{name}}'
