@@ -12,6 +12,6 @@ spec:
       - dns01:
           cloudflare:
             email: thaddeuscleo@gmail.com
-            apiKeySecretRef:
+            apiTokenSecretRef:
               name: cloudflare-secrets
               key: api-key
