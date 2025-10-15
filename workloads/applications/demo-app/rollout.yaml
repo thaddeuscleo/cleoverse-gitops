@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: demo-app
-          image: argoproj/rollouts-demo:yellow
+          image: argoproj/rollouts-demo:bad-yellow
   strategy:
     canary:
       steps:
