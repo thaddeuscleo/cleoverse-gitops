@@ -9,3 +9,5 @@ metadata:
 spec:
   ipAddressPools:
   - k8s-home
+  interfaces:
+  - ens18
