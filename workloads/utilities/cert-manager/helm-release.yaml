@@ -17,7 +17,6 @@ spec:
     path: ''
     repoURL: oci://quay.io/jetstack/charts/cert-manager
     targetRevision: 1.19.0
-  sources: []
   project: utilities
   syncPolicy:
     syncOptions:
