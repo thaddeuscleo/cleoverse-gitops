@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: applications-apps
+  namespace: argocd
+spec:
+  generators:
+    - list:
+        elements:
+          - name: demo-app
+            path: demo-app
+  template:
+    metadata:
+      name: '{{name}}'
+      namespace: argocd
+      labels:
+        app.kubernetes.io/part-of: applications
+    spec:
+      project: applications
+      source:
+        repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
+        targetRevision: HEAD
+        path: ./workloads/applications/{{path}}
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{name}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
