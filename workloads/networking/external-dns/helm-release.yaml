@@ -16,7 +16,7 @@ spec:
     path: ''
     repoURL: https://kubernetes-sigs.github.io/external-dns/
     targetRevision: 1.18.0
-    chart: traefik
+    chart: external-dns
     helm:
       valuesObject:
         provider:
