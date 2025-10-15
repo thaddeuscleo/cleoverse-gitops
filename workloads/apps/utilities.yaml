@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: utilities-app
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  labels:
+    app.kubernetes.io/part-of: root
+    app.kubernetes.io/component: utilities
+spec:
+  project: utilities
+  source:
+    repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
+    targetRevision: HEAD
+    path: ./workloads/utilities
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
