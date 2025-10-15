@@ -31,7 +31,7 @@ spec:
         domainFilters: ["cleoverse.net"]
         logLevel: info
         serviceMonitor:
-          enabled: true
+          enabled: false
   sources: []
   project: networking
   syncPolicy:
