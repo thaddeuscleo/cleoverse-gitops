@@ -9,6 +9,8 @@ spec:
         elements:
           - name: cert-manager
             path: cert-manager
+          - name: argo-rollouts
+            path: argo-rollouts
   template:
     metadata:
       name: '{{name}}'
