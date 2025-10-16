@@ -20,6 +20,8 @@ spec:
       parameters:
       - name: controller.image.pullPolicy
         value: "Always"
+      - name: agentgateway.enabled
+        value: true
       valuesObject:
         agentgateway:
           enabled: true
