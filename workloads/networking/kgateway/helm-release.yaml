@@ -26,7 +26,7 @@ spec:
         agentgateway:
           enabled: true
     repoURL: cr.kgateway.dev/kgateway-dev/charts
-    targetRevision: v2.2.0-main
+    targetRevision: v2.1.0
   syncPolicy:
     automated:
       prune: true 
