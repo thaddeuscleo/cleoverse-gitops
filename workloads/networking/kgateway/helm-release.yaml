@@ -20,8 +20,9 @@ spec:
       parameters:
       - name: controller.image.pullPolicy
         value: "Always"
-      - name: agentgateway.enabled
-        value: "true"
+      valuesObject:
+        agentgateway:
+          enabled: true
     repoURL: cr.kgateway.dev/kgateway-dev/charts
     targetRevision: v2.2.0-main
   syncPolicy:
