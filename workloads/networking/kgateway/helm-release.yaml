@@ -4,7 +4,7 @@ metadata:
   name: kgateway-release
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
   labels:
     app.kubernetes.io/part-of: networking
     app.kubernetes.io/component: gateway
@@ -20,6 +20,8 @@ spec:
       parameters:
       - name: controller.image.pullPolicy
         value: "Always"
+      - name: agentgateway.enabled
+        value: true
     repoURL: cr.kgateway.dev/kgateway-dev/charts
     targetRevision: v2.2.0-main
   syncPolicy:
