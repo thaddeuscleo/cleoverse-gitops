@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kgateway-release
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  labels:
+    app.kubernetes.io/part-of: networking
+    app.kubernetes.io/component: gateway
+spec:
+  destination:
+    namespace: kgateway-system
+    server: https://kubernetes.default.svc
+  project: networking
+  source:
+    chart: kgateway
+    helm:
+      skipCrds: false
+      parameters:
+      - name: controller.image.pullPolicy
+        value: "Always"
+    repoURL: cr.kgateway.dev/kgateway-dev/charts
+    targetRevision: v2.2.0-main
+  syncPolicy:
+    automated:
+      prune: true 
+      selfHeal: true 
+    syncOptions:
+    - CreateNamespace=true 

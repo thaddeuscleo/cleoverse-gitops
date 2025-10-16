@@ -13,6 +13,8 @@ spec:
             path: traefik
           - name: external-dns
             path: external-dns
+          - name: kgateway
+            path: kgateway
   template:
     metadata:
       name: '{{name}}'
