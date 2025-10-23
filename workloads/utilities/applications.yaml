@@ -11,6 +11,8 @@ spec:
             path: cert-manager
           - name: argo-rollouts
             path: argo-rollouts
+          - name: kargo
+            path: kargo
   template:
     metadata:
       name: '{{name}}'
