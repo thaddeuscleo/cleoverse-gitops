@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kargo-ingress
+  namespace: kargo
+  annotations:
+    cert-manager.io/cluster-issuer: cf-letsencrypt-prod
+    external-dns.alpha.kubernetes.io/hostname: kargo.home.cleoverse.net
+spec:
+  ingressClassName: traefik-release
+  rules:
+  - host: kargo.home.cleoverse.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kargo-api
+            port:
+              number: 8080
+  tls:
+  - hosts: 
+    - kargo.home.cleoverse.net
+    secretName: kargo-ingress-certs

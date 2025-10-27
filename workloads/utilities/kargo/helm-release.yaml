@@ -19,6 +19,9 @@ spec:
         api:
           secret:
             name: kargo-admin-account
+          tls:
+            enabled: false
+            terminatedUpstream: true
   syncPolicy:
     automated:
       prune: true
