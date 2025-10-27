@@ -18,7 +18,7 @@ spec:
           service:
             name: kargo-api
             port:
-              number: 8080
+              number: 80
   tls:
   - hosts: 
     - kargo.home.cleoverse.net
