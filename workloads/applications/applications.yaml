@@ -9,6 +9,8 @@ spec:
         elements:
           - name: demo-app
             path: demo-app
+          - name: guestbook
+            path: guestbook
   template:
     metadata:
       name: '{{name}}'
