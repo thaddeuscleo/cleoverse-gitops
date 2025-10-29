@@ -4,6 +4,7 @@ metadata:
   name: dev
 spec:
   project: guestbook
+  requestedFreight: []
   subscriptions:
     - warehouse: guestbook-images
   promotionMechanisms:
@@ -24,6 +25,7 @@ metadata:
   name: staging
 spec:
   project: guestbook
+  requestedFreight: []
   subscriptions:
     - upstreamStages:
         - dev
@@ -45,6 +47,7 @@ metadata:
   name: prod
 spec:
   project: guestbook
+  requestedFreight: []
   subscriptions:
     - upstreamStages:
         - staging
