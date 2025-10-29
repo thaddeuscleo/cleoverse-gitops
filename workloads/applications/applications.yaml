@@ -5,27 +5,35 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    - list:
-        elements:
-          - name: demo-app
-            path: demo-app
-          - name: guestbook
-            path: guestbook
+    - matrix:
+        generators:
+          # List of apps
+          - list:
+              elements:
+                - name: guestbook
+                  path: guestbook
+          # List of environments
+          - list:
+              elements:
+                - env: dev
+                - env: staging
+                - env: prod
   template:
     metadata:
-      name: '{{name}}'
+      name: '{{name}}-{{env}}'
       namespace: argocd
       labels:
         app.kubernetes.io/part-of: applications
+        environment: '{{env}}'
     spec:
       project: applications
       source:
         repoURL: https://github.com/thaddeuscleo/cleoverse-gitops.git
         targetRevision: HEAD
-        path: ./workloads/applications/{{path}}
+        path: ./workloads/applications/{{path}}/overlays/{{env}}
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{name}}'
+        namespace: '{{name}}-{{env}}'
       syncPolicy:
         automated:
           prune: true
