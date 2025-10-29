@@ -25,6 +25,8 @@ spec:
       labels:
         app.kubernetes.io/part-of: applications
         environment: '{{env}}'
+      annotations:
+        kargo.akuity.io/authorized-stage: 'guestbook:{{env}}'
     spec:
       project: applications
       source:

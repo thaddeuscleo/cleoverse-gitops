@@ -1,0 +1,10 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: guestbook-images
+spec:
+  project: guestbook
+  subscriptions:
+    - image:
+        repoURL: gcr.io/google-samples/hello-app
+        semverConstraint: ">=1.0"
