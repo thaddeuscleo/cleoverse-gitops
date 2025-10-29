@@ -1,55 +1,76 @@
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Project
 metadata:
-  name: kargo-demo-07
-spec:
-  promotionPolicies:
-  - stage: test
-    autoPromotionEnabled: true
-  - stage: uat
-    autoPromotionEnabled: true
-  - stage: prod
-    autoPromotionEnabled: true
+  name: kargo-demo
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Warehouse
 metadata:
   name: kargo-demo
-  namespace: kargo-demo-07
+  namespace: kargo-demo
 spec:
   subscriptions:
   - image:
-      repoURL: public.ecr.aws/nginx/nginx # Watch for new versions of this image
-      semverConstraint: ^1.24.0
+      repoURL: public.ecr.aws/nginx/nginx
+      constraint: ^1.26.0
+      discoveryLimit: 5
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: PromotionTask
 metadata:
-  name: promo-process
-  namespace: kargo-demo-07
+  name: demo-promo-process
+  namespace: kargo-demo
 spec:
   vars:
-  - name: gitRepo
-    value: https://github.com/thaddeuscleo/kargo-demo-gitops
+  - name: gitopsRepo
+    value: https://github.com/thaddeuscleo/kargo-demo-gitops.git
   - name: imageRepo
     value: public.ecr.aws/nginx/nginx
   steps:
+  - uses: git-clone
+    config:
+      repoURL: \${{ vars.gitopsRepo }}
+      checkout:
+      - branch: main
+        path: ./src
+      - branch: stage/\${{ ctx.stage }}
+        create: true
+        path: ./out
+  - uses: git-clear
+    config:
+      path: ./out
+  - uses: kustomize-set-image
+    as: update
+    config:
+      path: ./src/base
+      images:
+      - image: \${{ vars.imageRepo }}
+        tag: \${{ imageFrom(vars.imageRepo).Tag }}
+  - uses: kustomize-build
+    config:
+      path: ./src/stages/\${{ ctx.stage }}
+      outPath: ./out
+  - uses: git-commit
+    as: commit
+    config:
+      path: ./out
+      message: \${{ task.outputs.update.commitMessage }}
+  - uses: git-push
+    config:
+      path: ./out
   - uses: argocd-update
     config:
       apps:
-      - name: ${{ ctx.project }}-${{ ctx.stage }}
+      - name: kargo-demo-\${{ ctx.stage }}
         sources:
-        - repoURL: ${{ vars.gitRepo }}
-          kustomize:
-            images:
-            - repoURL: ${{ vars.imageRepo }}
-              tag: ${{ imageFrom(vars.imageRepo).Tag }}
+        - repoURL: \${{ vars.gitopsRepo }}
+          desiredRevision: \${{ task.outputs.commit.commit }}
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: test
-  namespace: kargo-demo-07
+  namespace: kargo-demo
 spec:
   requestedFreight:
   - origin:
@@ -61,16 +82,14 @@ spec:
     spec:
       steps:
       - task:
-          name: promo-process
-  verification:
-    analysisTemplates:
-    - name: kargo-demo
+          name: demo-promo-process
+        as: promo-process
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: uat
-  namespace: kargo-demo-07
+  namespace: kargo-demo
 spec:
   requestedFreight:
   - origin:
@@ -83,16 +102,14 @@ spec:
     spec:
       steps:
       - task:
-          name: promo-process
-  verification:
-    analysisTemplates:
-    - name: kargo-demo
+          name: demo-promo-process
+        as: promo-process
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
   name: prod
-  namespace: kargo-demo-07
+  namespace: kargo-demo
 spec:
   requestedFreight:
   - origin:
@@ -105,30 +122,5 @@ spec:
     spec:
       steps:
       - task:
-          name: promo-process
-  verification:
-    analysisTemplates:
-    - name: kargo-demo
----
-apiVersion: argoproj.io/v1alpha1
-kind: AnalysisTemplate
-metadata:
-  name: kargo-demo
-  namespace: kargo-demo-07
-spec:
-  metrics:
-  - name: test
-    provider:
-      job:
-        metadata:
-        spec:
-          backoffLimit: 1
-          template:
-            spec:
-              containers:
-              - name: test
-                image: alpine:latest
-                command:
-                - sleep
-                - "20"
-              restartPolicy: Never
+          name: demo-promo-process
+        as: promo-process

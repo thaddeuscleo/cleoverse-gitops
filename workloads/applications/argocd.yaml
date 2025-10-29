@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: kargo-demo-07
+  name: kargo-demo
   namespace: argocd
 spec:
   generators:
@@ -12,25 +12,18 @@ spec:
       - stage: prod
   template:
     metadata:
-      name: kargo-demo-07-{{stage}}
+      name: kargo-demo-{{stage}}
       annotations:
-        kargo.akuity.io/authorized-stage: kargo-demo-07:{{stage}}
+        kargo.akuity.io/authorized-stage: kargo-demo:{{stage}}
     spec:
       project: default
       source:
         repoURL: https://github.com/thaddeuscleo/kargo-demo-gitops.git
-        targetRevision: kustomize
-        path: stages/{{stage}}
-        kustomize:
-          images:
-          # Kargo will update this value to move new images into each stage
-          - public.ecr.aws/nginx/nginx=public.ecr.aws/nginx/nginx:placeholder
+        targetRevision: stage/{{stage}}
+        path: .
       destination:
         server: https://kubernetes.default.svc
-        namespace: kargo-demo-07-{{stage}}
+        namespace: kargo-demo-{{stage}}
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
-  ignoreApplicationDifferences:
-  - jqPathExpressions:
-    - .spec.source.kustomize.images
