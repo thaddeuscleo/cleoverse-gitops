@@ -13,8 +13,3 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/ports/0/containerPort
         value: 443
-
-images:
-  - name: gcr.io/google-samples/gb-frontend
-    newName: gcr.io/google-samples/hello-app
-    newTag: "2.0"
