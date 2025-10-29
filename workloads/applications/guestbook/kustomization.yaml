@@ -16,5 +16,4 @@ patches:
 
 images:
   - name: gcr.io/google-samples/gb-frontend
-    newName: haproxy
-    newTag: latest
+    newName: gcr.io/google-samples/hello-app
