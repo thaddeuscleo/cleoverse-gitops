@@ -15,5 +15,6 @@ patches:
         value: 443
 
 images:
-  - name: guestbook-ui
+  - name: gcr.io/google-samples/gb-frontend
     newName: haproxy
+    newTag: latest
