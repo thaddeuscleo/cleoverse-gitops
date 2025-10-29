@@ -17,4 +17,3 @@ patches:
 images:
   - name: guestbook-ui
     newName: haproxy
-    newTag: 2.4
